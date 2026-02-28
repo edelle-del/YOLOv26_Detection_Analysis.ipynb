@@ -1,0 +1,4 @@
+Model,Epochs,Image Size,Optimizer,Batch Size,Learning Rate
+Model 1,25,640,AdamW,4,0.01
+Model 2,30,640,SGD,20,0.001
+Model 3,40,640,auto,-1,0.0001

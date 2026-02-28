@@ -1,0 +1,70 @@
+MODEL COMPARISON DISCUSSION
+============================================================
+
+Model 1 — AdamW | 25 Epochs | LR 0.01 | Batch 4
+-------------------------------------------------------
+Model 1 achieved a mAP50 of 0.7015, Precision of 0.7251,
+Recall of 0.6219, and F1 Score of 0.6695.
+
+The model performed best on the "Truck" class (AP50: 0.8024),
+suggesting that this class had sufficient representation and visual
+distinctiveness in the training data for the optimizer and learning
+rate configuration used.
+
+The model struggled most with the "Bus" class (AP50: 0.6147).
+This may be attributed to higher learning rate causing instability on smaller or occluded instances,
+smaller batch size reducing gradient stability.
+The Bus class likely has moderate difficulty that could be improved with further fine-tuning.
+
+
+Model 2 — SGD | 30 Epochs | LR 0.001 | Batch 20
+-------------------------------------------------------
+Model 2 achieved a mAP50 of 0.3254, Precision of 0.517,
+Recall of 0.2742, and F1 Score of 0.3583.
+
+The model performed best on the "Motorcycle" class (AP50: 0.6239),
+suggesting that this class had sufficient representation and visual
+distinctiveness in the training data for the optimizer and learning
+rate configuration used.
+
+The model struggled most with the "Car" class (AP50: 0.0622).
+This may be attributed to low learning rate limiting convergence,
+larger batch size potentially over-smoothing gradients for rare classes.
+The Car class likely has fewer training samples or higher visual similarity to other classes.
+
+
+Model 3 — auto | 40 Epochs | LR 0.0001 | Batch -1
+-------------------------------------------------------
+Model 3 achieved a mAP50 of 0.8271, Precision of 0.9414,
+Recall of 0.7091, and F1 Score of 0.8089.
+
+The model performed best on the "Car" class (AP50: 0.995),
+suggesting that this class had sufficient representation and visual
+distinctiveness in the training data for the optimizer and learning
+rate configuration used.
+
+The model struggled most with the "Bus" class (AP50: 0.6786).
+This may be attributed to low learning rate limiting convergence,
+smaller batch size reducing gradient stability.
+The Bus class likely has moderate difficulty that could be improved with further fine-tuning.
+
+
+CROSS-MODEL COMPARISON
+-------------------------------------------------------
+
+Overall, Model 3 (auto) achieved the highest mAP50 of 0.8271,
+indicating it generalized best across all four vehicle classes.
+
+Precision vs Recall trade-off: Higher precision means fewer false positives
+(the model is conservative in its detections), while higher recall means
+fewer false negatives (the model detects more true instances). A balanced
+F1 Score reflects how well a model handles both.
+
+Classes such as Motorcycle and Bus tend to be harder to detect across all
+models due to scale variation — motorcycles appear small at distance while
+buses occupy large frame areas, both challenging standard anchor-based
+detection at 640×640 resolution.
+
+The per-class AP50 table reveals which optimizer and epoch configuration
+best handles each vehicle type, and teams should consider class-weighted
+loss or additional augmentation for consistently low-scoring classes.

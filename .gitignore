@@ -1,0 +1,20 @@
+
+# Google Docs/Sheets/Slides (not uploadable to git)
+*.gdoc
+*.gsheet
+*.gslides
+*.gform
+
+# Large files
+*.pt
+*.zip
+*.mp4
+runs/
+frames_*/
+augmented/
+processed/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

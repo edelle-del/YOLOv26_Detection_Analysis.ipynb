@@ -1,0 +1,51 @@
+
+=== Model 1 — AdamW | 25 Epochs ===
+  epoch                              : 25.0
+  time                               : 374.523
+  train/box_loss                     : 1.06859
+  train/cls_loss                     : 1.12
+  train/dfl_loss                     : 0.00542
+  metrics/precision(B)               : 0.66473
+  metrics/recall(B)                  : 0.63947
+  metrics/mAP50(B)                   : 0.68532
+  metrics/mAP50-95(B)                : 0.54628
+  val/box_loss                       : 1.00992
+  val/cls_loss                       : 1.05943
+  val/dfl_loss                       : 0.00674
+  lr/pg0                             : 0.000496
+  lr/pg1                             : 0.000496
+  lr/pg2                             : 0.000496
+
+=== Model 2 — SGD   | 30 Epochs ===
+  epoch                              : 30.0
+  time                               : 217.104
+  train/box_loss                     : 1.05224
+  train/cls_loss                     : 2.51529
+  train/dfl_loss                     : 0.00505
+  metrics/precision(B)               : 0.60196
+  metrics/recall(B)                  : 0.30221
+  metrics/mAP50(B)                   : 0.32168
+  metrics/mAP50-95(B)                : 0.25428
+  val/box_loss                       : 1.08481
+  val/cls_loss                       : 1.74533
+  val/dfl_loss                       : 0.00773
+  lr/pg0                             : 4.3e-05
+  lr/pg1                             : 4.3e-05
+  lr/pg2                             : 4.3e-05
+
+=== Model 3 — auto  | 40 Epochs ===
+  epoch                              : 40.0
+  time                               : 310.478
+  train/box_loss                     : 0.84376
+  train/cls_loss                     : 1.16022
+  train/dfl_loss                     : 0.00373
+  metrics/precision(B)               : 0.93385
+  metrics/recall(B)                  : 0.71409
+  metrics/mAP50(B)                   : 0.82603
+  metrics/mAP50-95(B)                : 0.71847
+  val/box_loss                       : 0.82092
+  val/cls_loss                       : 1.0601
+  val/dfl_loss                       : 0.00525
+  lr/pg0                             : 4.34375e-05
+  lr/pg1                             : 4.34375e-05
+  lr/pg2                             : 4.34375e-05
