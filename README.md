@@ -1,6 +1,6 @@
 # Philippine Urban Traffic Vehicle Classification using YOLOv26
 
-##🚀 Project Overview
+## 🚀 Project Overview
 This project focuses on the comparative evaluation and optimization of a YOLOv26 model for real-time vehicle detection in complex, high-density Philippine urban environments. By engineering a custom dataset and benchmarking various hyperparameter configurations, this model achieves high-accuracy detection across diverse vehicle classes (e.g., jeepneys, tricycles, cars) in mixed-traffic scenarios.
 
 ## 📊 Key Performance Metrics
